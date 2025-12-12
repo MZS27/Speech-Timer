@@ -1,0 +1,61 @@
+<!doctype HTML>
+<HEAD>
+<TITLE>Speech Timer</TITLE>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<STYLE>
+
+</STYLE>
+
+<SCRIPT>
+function startTimer(){
+	var totalTime = document.getElementById("timerMain").value;
+	var warnTime = document.getElementById("timerWarn").value;
+	document.body.style.backgroundColor= "#22CE83";
+
+	setTimeout(orangeTimer, warnTime * 1000);
+	setTimeout(redTimer, totalTime * 1000);
+	
+}
+
+function orangeTimer(){
+	document.body.style.backgroundColor= "orange";
+}
+
+function redTimer(){
+	document.body.style.backgroundColor= "Tomato";
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY>
+
+<div class="container mt-5 col-4 ">
+	<!--<h1 class="display-5 text-center text-muted mb-4"> Speech Timer</h1> -->
+	<div class="card shadow">
+		<div class="card-header bg-dark text-white text-center h4">
+			Speech Timer
+		</div>
+		<div class="card-body">
+			<div class="form-group ">
+				<LABEL class="control-label">Timer Duration (Seconds)</LABEL>
+				<INPUT class="form-control" type="number" id="timerMain" value=120>
+			</div>
+			
+			<div class="form-group ">
+				<LABEL class="control-label">Warning Duration (Seconds)</LABEL>
+				<INPUT class="form-control" type="number" id="timerWarn" value=90>
+			</div>
+			
+			<div class="form-group " align="center">
+				<BUTTON class="btn btn-dark" onclick="startTimer();">Start Timer</BUTTON>
+			</div>
+		</div>
+	</div>
+</div>
+
+</BODY>
+
+</HTML>
